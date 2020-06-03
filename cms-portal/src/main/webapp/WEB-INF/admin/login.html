@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="/admin/layui/modules/login.css">
+</head>
+<body>
+<div id="login">
+    <h1>Login</h1>
+    <form method="post" action="">
+        <input type="text" required="required" placeholder="用户名" name="u"></input>
+        <input type="password" required="required" placeholder="密码" name="p"></input>
+        <div>
+            <input id="kaptcha" style="width: 170px" type="text" placeholder="zcsd"/>
+            <img style="float: right;margin-top: 1px;margin-right: -20px;cursor: pointer" id="kaptchaPic" src="/admin/cms/producer.do" onclick="this.src='/admin/cms/producer.do?random='+Math.random()">
+        </div>
+        <div>
+                <input type="checkbox" style="margin-left: -140px" name="remeberMe" value="true"/>
+                <span style="display: block;margin-left:30px;margin-top:-36px;color: white;">记住密码</span>
+        </div>
+        <button class="but" type="submit">登录</button>
+    </form>
+</div>
+</body>
+</html>

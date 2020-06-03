@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+
+    <diskStore path="java.io.tmpdir/cms/ehcache"/>
+
+    <!--默认缓存策略-->
+    <defaultCache
+            maxElementsInMemory="10000"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            overflowToDisk="true"
+            maxElementsOnDisk="100000000"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            momoryStoreEvictionPolicy="LUR"
+            transactionalMode="off">
+    </defaultCache>
+
+    <!--菜单缓存-->
+    <cache name="permissionCache"
+           maxEntriesLocalHeap="10000"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           diskSpooBufferSizeMB="30"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="6000"
+           momoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+    </cache>
+
+</ehcache>

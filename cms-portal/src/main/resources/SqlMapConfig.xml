@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--下划线与驼峰转换-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--配置别名扫描包-->
+    <typeAliases>
+        <package name="com.cms.core"/>
+    </typeAliases>
+
+    <!--插件-->
+    <plugins>
+        <!-- 配置分页插件 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+
+    <!--绑定mapper配置文件-->
+    <!--<mappers>
+        <mapper resource="com/cms/dao/mapper/mappers/TestMapper.xml"/>
+    </mappers>-->
+</configuration>

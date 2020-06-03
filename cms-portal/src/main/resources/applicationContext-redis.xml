@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置jedis连接池需要-->
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <!--最多可空闲连接数,这里设置为20表示即使没有数据库连接时，依然可以保持20个空闲的连接，而不被清除，随时待命-->
+        <property name="maxIdle" value="20"/>
+        <!--最大等待时间(没有可用连接时，连接池等待连接被归还的最大时间、单位毫秒)，超时则抛出异常-->
+        <property name="maxWaitMillis" value="1000"/>
+        <!--获取连接时检查其有效性-->
+        <property name="testOnBorrow" value="true"/>
+    </bean>
+
+    <!--连接池配置-->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="poolConfig" ref="poolConfig"/>
+        <property name="usePool" value="true"/>
+        <property name="hostName" value="127.0.0.1"/>
+        <property name="database" value="0"/>
+    </bean>
+
+    <!--RedisTemplate-->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory"/>
+        <property name="keySerializer" ref="stringRedisSerializer"/>
+        <property name="valueSerializer" ref="stringRedisSerializer"/>
+    </bean>
+
+    <!--redis序列化器-->
+    <bean id="stringRedisSerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+</beans>
