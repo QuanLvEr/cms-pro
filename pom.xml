@@ -29,7 +29,7 @@
         <servletVersion>9.0.4</servletVersion>
         <aspectjweaverVersion>1.7.3</aspectjweaverVersion>
         <logbackVersion>1.1.2</logbackVersion>
-        <mysqlVersion>5.1.46</mysqlVersion>
+        <mysqlVersion>8.0.16</mysqlVersion>
         <guavaVersion>20.0</guavaVersion>
         <commonsLang3Version>3.5</commonsLang3Version>
         <commonsCollectionsVersion>3.2.1</commonsCollectionsVersion>
