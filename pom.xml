@@ -23,7 +23,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <springVersion>4.3.20.RELEASE</springVersion>
-        <mybatisVersion>3.4.1</mybatisVersion>
+        <mybatisVersion>3.5.6</mybatisVersion>
         <mybatisSpringVersion>1.3.0</mybatisSpringVersion>
         <mybatisTypehandlersJsr310Version>1.0.1</mybatisTypehandlersJsr310Version>
         <servletVersion>9.0.4</servletVersion>
